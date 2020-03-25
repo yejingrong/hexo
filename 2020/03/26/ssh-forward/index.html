@@ -45,20 +45,20 @@
   };
 </script>
 
-  <meta name="description" content="Some referencehexo documentationtheme-nexttheme-next2zhihu essaya bilibli vediocategory archives…">
-<meta name="keywords" content="hexo">
+  <meta name="description" content="ssh的端口转发在穿透内网还是挺管用的，今天想起用于远程控制，不过感觉自己脑子越来越发锈了，又记不起怎么使用了（其实没弄清楚这个东西）。待有空整理下，思路先简单写在这里。 概述  ssh一般用于远程控制，相当于建立一条ssh隧道/连接。后面的两种端口转发正是基于ssh隧道。可作为穿透内网的一种方案。 从透传到目标主机说起1ssh -L LocalPort:targetHost:targetPort">
+<meta name="keywords" content="tools">
 <meta property="og:type" content="article">
-<meta property="og:title" content="hexo and theme">
-<meta property="og:url" content="http://yoursite.com/2019/10/07/hexo-and-theme/index.html">
+<meta property="og:title" content="ssh端口转发">
+<meta property="og:url" content="http://yoursite.com/2020/03/26/ssh-forward/index.html">
 <meta property="og:site_name" content="YCarrier">
-<meta property="og:description" content="Some referencehexo documentationtheme-nexttheme-next2zhihu essaya bilibli vediocategory archives…">
+<meta property="og:description" content="ssh的端口转发在穿透内网还是挺管用的，今天想起用于远程控制，不过感觉自己脑子越来越发锈了，又记不起怎么使用了（其实没弄清楚这个东西）。待有空整理下，思路先简单写在这里。 概述  ssh一般用于远程控制，相当于建立一条ssh隧道/连接。后面的两种端口转发正是基于ssh隧道。可作为穿透内网的一种方案。 从透传到目标主机说起1ssh -L LocalPort:targetHost:targetPort">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-10-18T13:29:52.000Z">
+<meta property="og:updated_time" content="2020-03-25T19:06:38.133Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="hexo and theme">
-<meta name="twitter:description" content="Some referencehexo documentationtheme-nexttheme-next2zhihu essaya bilibli vediocategory archives…">
+<meta name="twitter:title" content="ssh端口转发">
+<meta name="twitter:description" content="ssh的端口转发在穿透内网还是挺管用的，今天想起用于远程控制，不过感觉自己脑子越来越发锈了，又记不起怎么使用了（其实没弄清楚这个东西）。待有空整理下，思路先简单写在这里。 概述  ssh一般用于远程控制，相当于建立一条ssh隧道/连接。后面的两种端口转发正是基于ssh隧道。可作为穿透内网的一种方案。 从透传到目标主机说起1ssh -L LocalPort:targetHost:targetPort">
 
-<link rel="canonical" href="http://yoursite.com/2019/10/07/hexo-and-theme/">
+<link rel="canonical" href="http://yoursite.com/2020/03/26/ssh-forward/">
 
 
 <script id="page-configurations">
@@ -72,7 +72,7 @@
   };
 </script>
 
-  <title>hexo and theme | YCarrier</title>
+  <title>ssh端口转发 | YCarrier</title>
   
 
 
@@ -211,7 +211,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/07/hexo-and-theme/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/26/ssh-forward/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/lpic_house.jpg">
@@ -224,7 +224,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          hexo and theme
+          ssh端口转发
         </h1>
 
         <div class="post-meta">
@@ -233,24 +233,18 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2019-10-07 16:53:20" itemprop="dateCreated datePublished" datetime="2019-10-07T16:53:20+08:00">2019-10-07</time>
+              <time title="创建时间：2020-03-26 00:34:58 / 修改时间：03:06:38" itemprop="dateCreated datePublished" datetime="2020-03-26T00:34:58+08:00">2020-03-26</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-10-18 21:29:52" itemprop="dateModified" datetime="2019-10-18T21:29:52+08:00">2019-10-18</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/hexo/" itemprop="url" rel="index">
-                    <span itemprop="name">hexo</span>
+                  <a href="/categories/coder/" itemprop="url" rel="index">
+                    <span itemprop="name">coder</span>
                   </a>
                 </span>
             </span>
@@ -273,7 +267,30 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="Some-reference"><a href="#Some-reference" class="headerlink" title="Some reference"></a>Some reference</h2><p><a href="https://hexo.io/docs" target="_blank" rel="noopener">hexo documentation</a><br><a href="https://theme-next.org" target="_blank" rel="noopener">theme-next</a><br><a href="http://theme-next.iissnan.com" target="_blank" rel="noopener">theme-next2</a><br><a href="https://zhuanlan.zhihu.com/p/30836436" target="_blank" rel="noopener">zhihu essay</a><br><a href="https://www.bilibili.com/video/av17653359/?p=10" target="_blank" rel="noopener">a bilibli vedio</a><br><a href="https://www.zhihu.com/question/33324071/answer/58775540" target="_blank" rel="noopener">category archives</a><br>…</p>
+        <p>ssh的端口转发在穿透内网还是挺管用的，今天想起用于远程控制，不过感觉自己脑子越来越发锈了，又记不起怎么使用了（其实没弄清楚这个东西）。待有空整理下，思路先简单写在这里。</p>
+<h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>  ssh一般用于远程控制，相当于建立一条ssh隧道/连接。后面的两种端口转发正是基于ssh隧道。可作为穿透内网的一种方案。</p>
+<h1 id="从透传到目标主机说起"><a href="#从透传到目标主机说起" class="headerlink" title="从透传到目标主机说起"></a>从透传到目标主机说起</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -L LocalPort:targetHost:targetPort RemoteHost -p RemoteSshPort</span><br></pre></td></tr></table></figure>
+
+<p>上面命令建立一条【从本地(??)到远程主机(RemoteHost:RemotePort)】的ssh隧道，<strong>用于将本地端口流量【借助远程主机】【透明地】转发到目标主机</strong>。</p>
+<p>设想场景：目标主机（web服务/ssh/…）处于内网，我们无法直接访问。但是可以通过跳板机来访问之（跳板机可以直接方便访问目标主机，二者一般处于局域网）。此跳板机即我们需要建立隧道的一端。而本地端口自然是你所方便访问到的。</p>
+<p>简单示意：(somebody)–Local===ssh===&gt;{Remote–Target}</p>
+<p>可要是找不到这样的跳板机呢，譬如“跳板机”不能直接访问目标主机（如内网NAT虚拟机）？ssh本地端口转发恐怕就无能为力了，因为本地无法建立与远程的ssh隧道。但是反过来呢，如果目标主机（又或可直接访问目标主机的局域网机）可以建立与本地的ssh隧道，那也是OK的咯。这就涉及到ssh远程端口转发了，不过和本地端口转发不同，ssh发起端为远程主机，命令如下：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -R RemotePort:targetLocalHost:targetLocalPort RemoteHost -p RemoteSshPort</span><br></pre></td></tr></table></figure>
+
+<p>简单示意：   (somebody)–Remote&lt;===ssh==={Local–Target} <br>或者这样看： {Target–Local}&lt;===ssh===Remote–(somebody)</p>
+<p>总结下，两种方式联系与区别：</p>
+<ol>
+<li>联系：两者都可使用相同的手段（ssh隧道）达成相同的目的（透明转发流量）</li>
+<li>区别：跳板机的选取/位置，ssh隧道发起端位置（前者L==&gt;R,后者L&lt;==R）</li>
+</ol>
+<p>对于本地/远程·端口转发：</p>
+<ol>
+<li>本地端口转发：访问本地端口即访问（远程）目标主机服务（透传），本地会建立监听端口（本地端口）</li>
+<li>远程端口转发：访问远程端口即访问（本地）目标主机服务（透传），远程会建立监听端口（远程端口）</li>
+</ol>
+<h1 id="本地端口转发"><a href="#本地端口转发" class="headerlink" title="本地端口转发"></a>本地端口转发</h1><h1 id="远程端口转发"><a href="#远程端口转发" class="headerlink" title="远程端口转发"></a>远程端口转发</h1><p>和本地端口转发相对。</p>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p><a href="http://www.ruanyifeng.com/blog/2011/12/ssh_port_forwarding.html" target="_blank" rel="noopener">SSH原理与运用（二）：远程操作与端口转发</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/57630633" target="_blank" rel="noopener">SSH 命令的三种代理功能</a></p>
 
     </div>
 
@@ -283,7 +300,7 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/hexo/" rel="tag"># hexo</a>
+              <a href="/tags/tools/" rel="tag"># tools</a>
           </div>
 
         
@@ -291,11 +308,11 @@
 
         
     <div class="post-nav">
-      <div class="post-nav-item"></div>
       <div class="post-nav-item">
-    <a href="/2019/10/18/iptables/" rel="next" title="iptables">
-      iptables <i class="fa fa-chevron-right"></i>
+    <a href="/2019/10/18/iptables/" rel="prev" title="iptables">
+      <i class="fa fa-chevron-left"></i> iptables
     </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -333,7 +350,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Some-reference"><span class="nav-number">1.</span> <span class="nav-text">Some reference</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#概述"><span class="nav-number">1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#从透传到目标主机说起"><span class="nav-number">2.</span> <span class="nav-text">从透传到目标主机说起</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#本地端口转发"><span class="nav-number">3.</span> <span class="nav-text">本地端口转发</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#远程端口转发"><span class="nav-number">4.</span> <span class="nav-text">远程端口转发</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考资料"><span class="nav-number">5.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
