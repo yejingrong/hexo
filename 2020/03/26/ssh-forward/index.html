@@ -53,7 +53,7 @@
 <meta property="og:site_name" content="YCarrier">
 <meta property="og:description" content="ssh的端口转发在穿透内网还是挺管用的，今天想起用于远程控制，不过感觉自己脑子越来越发锈了，又记不起怎么使用了（其实没弄清楚这个东西）。待有空整理下，思路先简单写在这里。 概述  ssh一般用于远程控制，相当于建立一条ssh隧道/连接。后面的两种端口转发正是基于ssh隧道。可作为穿透内网的一种方案。 从透传到目标主机说起1ssh -L LocalPort:targetHost:targetPort">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-03-25T19:11:58.270Z">
+<meta property="og:updated_time" content="2020-03-25T19:17:34.141Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ssh端口转发">
 <meta name="twitter:description" content="ssh的端口转发在穿透内网还是挺管用的，今天想起用于远程控制，不过感觉自己脑子越来越发锈了，又记不起怎么使用了（其实没弄清楚这个东西）。待有空整理下，思路先简单写在这里。 概述  ssh一般用于远程控制，相当于建立一条ssh隧道/连接。后面的两种端口转发正是基于ssh隧道。可作为穿透内网的一种方案。 从透传到目标主机说起1ssh -L LocalPort:targetHost:targetPort">
@@ -235,7 +235,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2020-03-26 00:34:58 / 修改时间：03:11:58" itemprop="dateCreated datePublished" datetime="2020-03-26T00:34:58+08:00">2020-03-26</time>
+              <time title="创建时间：2020-03-26 00:34:58 / 修改时间：03:17:34" itemprop="dateCreated datePublished" datetime="2020-03-26T00:34:58+08:00">2020-03-26</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -277,7 +277,7 @@
 <p>可要是找不到这样的跳板机呢，譬如“跳板机”不能直接访问目标主机（如内网NAT虚拟机）？ssh本地端口转发恐怕就无能为力了，因为本地无法建立与远程的ssh隧道。但是反过来呢，如果目标主机（又或可直接访问目标主机的局域网机）可以建立与本地的ssh隧道，那也是OK的咯。这就涉及到ssh远程端口转发了，不过和本地端口转发不同，ssh发起端为远程主机，命令如下：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -R RemotePort:targetLocalHost:targetLocalPort RemoteHost -p RemoteSshPort</span><br></pre></td></tr></table></figure>
 
-<p>简单示意：   (somebody)–Remote&lt;===ssh==={Local–Target} <br>或者这样看： {Target–Local}&lt;===ssh===Remote–(somebody)</p>
+<p>简单示意：   (somebody)–Remote&lt;===ssh==={Local–Target} <br>或者这样看： {Target–Local}===ssh===&gt;Remote–(somebody)</p>
 <p>总结下，两种方式联系与区别：</p>
 <ol>
 <li>联系：两者都可使用相同的手段（ssh隧道）达成相同的目的（透明转发流量）</li>
