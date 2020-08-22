@@ -45,18 +45,20 @@
   };
 </script>
 
-  <meta name="description" content="one lazy pig...">
-<meta property="og:type" content="website">
-<meta property="og:title" content="YCarrier">
-<meta property="og:url" content="http://yoursite.com/categories/hexo/index.html">
+  <meta name="description" content="cmake笔记入门教程FAQ变量 What’s the CMake syntax to set and use variables? 参考    指令相关 include_directories/target_include_directories的区别   简言之，include_xx针对所有的targets，target_xx仅针对指定的target，且可以设置PUBLIC等属性 参考incl">
+<meta name="keywords" content="cmake,makefile,build,note">
+<meta property="og:type" content="article">
+<meta property="og:title" content="cmake-note">
+<meta property="og:url" content="http://yoursite.com/2020/08/22/cmake-note/index.html">
 <meta property="og:site_name" content="YCarrier">
-<meta property="og:description" content="one lazy pig...">
+<meta property="og:description" content="cmake笔记入门教程FAQ变量 What’s the CMake syntax to set and use variables? 参考    指令相关 include_directories/target_include_directories的区别   简言之，include_xx针对所有的targets，target_xx仅针对指定的target，且可以设置PUBLIC等属性 参考incl">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2020-08-22T17:03:02.571Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="YCarrier">
-<meta name="twitter:description" content="one lazy pig...">
+<meta name="twitter:title" content="cmake-note">
+<meta name="twitter:description" content="cmake笔记入门教程FAQ变量 What’s the CMake syntax to set and use variables? 参考    指令相关 include_directories/target_include_directories的区别   简言之，include_xx针对所有的targets，target_xx仅针对指定的target，且可以设置PUBLIC等属性 参考incl">
 
-<link rel="canonical" href="http://yoursite.com/categories/hexo/">
+<link rel="canonical" href="http://yoursite.com/2020/08/22/cmake-note/">
 
 
 <script id="page-configurations">
@@ -64,13 +66,13 @@
   CONFIG.page = {
     sidebar: "",
     isHome: false,
-    isPost: false,
+    isPost: true,
     isPage: false,
     isArchive: false
   };
 </script>
 
-  <title>分类: hexo | YCarrier</title>
+  <title>cmake-note | YCarrier</title>
   
 
 
@@ -204,51 +206,142 @@
           <div class="content">
             
 
+  <div class="posts-expand">
+      
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <h1 class="collection-header">hexo
-          <small>分类</small>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/08/22/cmake-note/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/lpic_house.jpg">
+      <meta itemprop="name" content="YCarrier">
+      <meta itemprop="description" content="one lazy pig...">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="YCarrier">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          cmake-note
         </h1>
-      </div>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-08-22 21:32:07" itemprop="dateCreated datePublished" datetime="2020-08-22T21:32:07+08:00">2020-08-22</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-23 01:03:02" itemprop="dateModified" datetime="2020-08-23T01:03:02+08:00">2020-08-23</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/build/" itemprop="url" rel="index">
+                    <span itemprop="name">build</span>
+                  </a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <h1 class="collection-header">2019</h1>
+        <h1 id="cmake笔记"><a href="#cmake笔记" class="headerlink" title="cmake笔记"></a>cmake笔记</h1><h2 id="入门教程"><a href="#入门教程" class="headerlink" title="入门教程"></a>入门教程</h2><h3 id><a href="#" class="headerlink" title></a></h3><h2 id="FAQ"><a href="#FAQ" class="headerlink" title="FAQ"></a>FAQ</h2><h3 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h3><ul>
+<li>What’s the CMake syntax to set and use variables?<ul>
+<li><a href="https://stackoverflow.com/questions/31037882/whats-the-cmake-syntax-to-set-and-use-variables" target="_blank" rel="noopener">参考</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="指令相关"><a href="#指令相关" class="headerlink" title="指令相关"></a>指令相关</h3><ul>
+<li>include_directories/target_include_directories的区别  <ul>
+<li>简言之，include_xx针对所有的targets，target_xx仅针对指定的target，且可以设置PUBLIC等属性</li>
+<li>参考<a href="https://stackoverflow.com/questions/31969547/what-is-the-difference-between-include-directories-and-target-include-directorie" target="_blank" rel="noopener">include_directories &amp; target_include_directories</a></li>
+</ul>
+</li>
+<li>CMakeCache.txt相关含义  <ul>
+<li>每次cmake不一定会更新Cache里面的变量(等？)，变量区分是否non-cache：如<code>set(var ... CACHE)</code> # TODO</li>
+<li>参考<a href="https://stackoverflow.com/questions/42160117/what-is-cmakecache-txt-and-why-it-overrides-my-variables" target="_blank" rel="noopener">what-is-cmakecache-txt-and-why-it-overrides-my-variables</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="简单总结"><a href="#简单总结" class="headerlink" title="简单总结"></a>简单总结</h3><ul>
+<li>cmake主要用来进行编译。支持各makefile的跨平台，比makefile高级、易用。</li>
+<li>从linux的cpp编译角度讲，主要分预处理（如条件编译）、编译、（汇编）、链接的流程。<ul>
+<li>预处理：进行宏定义、条件编译、包含（查找头文件）..</li>
+<li>编译：编译单文件，指定编译选项（调试信息、优化、语言标准等）</li>
+<li>链接：指定各.o、.a、.so等二进制文件，链接生成可执行文件、动态库、（打包为）静态库等</li>
+</ul>
+</li>
+<li>cmake主要有以下工作或功能：<ul>
+<li>CMake本身的语法/语言，如支持条件，变量等。</li>
+<li>默认变量（build_type, c_standard等）。</li>
+<li>指定编译的源文件和库、查找头文件、库的目录，指定编译选项，指定目标及生成；</li>
+<li>软件测试（略）</li>
+<li>软件和文件的安装（Install）</li>
+</ul>
+</li>
+</ul>
+
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+    
+    
+    
 
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2019-10-07T16:53:20+08:00"
-              content="2019-10-07">
-           
-          10-07 
-        </time>
-      </div>
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/cmake/" rel="tag"># cmake</a>
+              <a href="/tags/makefile/" rel="tag"># makefile</a>
+              <a href="/tags/build/" rel="tag"># build</a>
+              <a href="/tags/note/" rel="tag"># note</a>
+          </div>
 
-      <h2 class="post-title">
-          <a class="post-title-link" href="/2019/10/07/hexo-and-theme/" itemprop="url">
-            <span itemprop="name">hexo and theme</span>
-          </a>
-      </h2>
+        
 
-    </header>
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/04/18/linux-command/" rel="prev" title="linux-command">
+      <i class="fa fa-chevron-left"></i> linux-command
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
   </article>
+  
+  
+  
 
-    </div>
   </div>
-  
-  
-  
-
-  
-
 
 
           </div>
@@ -277,6 +370,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#cmake笔记"><span class="nav-number">1.</span> <span class="nav-text">cmake笔记</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#入门教程"><span class="nav-number">1.1.</span> <span class="nav-text">入门教程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">1.1.1.</span> <span class="nav-text"></span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#FAQ"><span class="nav-number">1.2.</span> <span class="nav-text">FAQ</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#变量"><span class="nav-number">1.2.1.</span> <span class="nav-text">变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#指令相关"><span class="nav-number">1.2.2.</span> <span class="nav-text">指令相关</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#简单总结"><span class="nav-number">1.2.3.</span> <span class="nav-text">简单总结</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 

@@ -45,20 +45,20 @@
   };
 </script>
 
-  <meta name="description" content="ssh的端口转发在穿透内网还是挺管用的，今天想起用于远程控制，不过感觉自己脑子越来越发锈了，又记不起怎么使用了（其实没弄清楚这个东西）。待有空整理下，思路先简单写在这里。 概述  ssh一般用于远程控制，相当于建立一条ssh隧道/连接。后面的两种端口转发正是基于ssh隧道。可作为穿透内网的一种方案。 从透传到目标主机说起1ssh -L LocalPort:targetHost:targetPort">
-<meta name="keywords" content="tools">
+  <meta name="description" content="Linux常用命令软件安装dpkg1dpkg --configure -a  文件操作lsof: list open files一般以root权限运行 12345678910111213141516171819202122232425262728# 基本的lsof -h # 简要帮助lsof -a # 结果进程“与”运算（而不是“或”）lsof -F # 格式化输出结果，如 lsof -F pcf">
+<meta name="keywords" content="linux,command,shell">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ssh端口转发">
-<meta property="og:url" content="http://yoursite.com/2020/03/26/ssh-forward/index.html">
+<meta property="og:title" content="linux-command">
+<meta property="og:url" content="http://yoursite.com/2020/04/18/linux-command/index.html">
 <meta property="og:site_name" content="YCarrier">
-<meta property="og:description" content="ssh的端口转发在穿透内网还是挺管用的，今天想起用于远程控制，不过感觉自己脑子越来越发锈了，又记不起怎么使用了（其实没弄清楚这个东西）。待有空整理下，思路先简单写在这里。 概述  ssh一般用于远程控制，相当于建立一条ssh隧道/连接。后面的两种端口转发正是基于ssh隧道。可作为穿透内网的一种方案。 从透传到目标主机说起1ssh -L LocalPort:targetHost:targetPort">
+<meta property="og:description" content="Linux常用命令软件安装dpkg1dpkg --configure -a  文件操作lsof: list open files一般以root权限运行 12345678910111213141516171819202122232425262728# 基本的lsof -h # 简要帮助lsof -a # 结果进程“与”运算（而不是“或”）lsof -F # 格式化输出结果，如 lsof -F pcf">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-03-25T19:17:34.141Z">
+<meta property="og:updated_time" content="2020-04-19T03:08:11.807Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ssh端口转发">
-<meta name="twitter:description" content="ssh的端口转发在穿透内网还是挺管用的，今天想起用于远程控制，不过感觉自己脑子越来越发锈了，又记不起怎么使用了（其实没弄清楚这个东西）。待有空整理下，思路先简单写在这里。 概述  ssh一般用于远程控制，相当于建立一条ssh隧道/连接。后面的两种端口转发正是基于ssh隧道。可作为穿透内网的一种方案。 从透传到目标主机说起1ssh -L LocalPort:targetHost:targetPort">
+<meta name="twitter:title" content="linux-command">
+<meta name="twitter:description" content="Linux常用命令软件安装dpkg1dpkg --configure -a  文件操作lsof: list open files一般以root权限运行 12345678910111213141516171819202122232425262728# 基本的lsof -h # 简要帮助lsof -a # 结果进程“与”运算（而不是“或”）lsof -F # 格式化输出结果，如 lsof -F pcf">
 
-<link rel="canonical" href="http://yoursite.com/2020/03/26/ssh-forward/">
+<link rel="canonical" href="http://yoursite.com/2020/04/18/linux-command/">
 
 
 <script id="page-configurations">
@@ -72,7 +72,7 @@
   };
 </script>
 
-  <title>ssh端口转发 | YCarrier</title>
+  <title>linux-command | YCarrier</title>
   
 
 
@@ -211,7 +211,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/26/ssh-forward/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/18/linux-command/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/lpic_house.jpg">
@@ -224,7 +224,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          ssh端口转发
+          linux-command
         </h1>
 
         <div class="post-meta">
@@ -233,18 +233,24 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2020-03-26 00:34:58 / 修改时间：03:17:34" itemprop="dateCreated datePublished" datetime="2020-03-26T00:34:58+08:00">2020-03-26</time>
+              <time title="创建时间：2020-04-18 09:42:35" itemprop="dateCreated datePublished" datetime="2020-04-18T09:42:35+08:00">2020-04-18</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-04-19 11:08:11" itemprop="dateModified" datetime="2020-04-19T11:08:11+08:00">2020-04-19</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/coder/" itemprop="url" rel="index">
-                    <span itemprop="name">coder</span>
+                  <a href="/categories/linux/" itemprop="url" rel="index">
+                    <span itemprop="name">linux</span>
                   </a>
                 </span>
             </span>
@@ -267,31 +273,12 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>ssh的端口转发在穿透内网还是挺管用的，今天想起用于远程控制，不过感觉自己脑子越来越发锈了，又记不起怎么使用了（其实没弄清楚这个东西）。待有空整理下，思路先简单写在这里。</p>
-<h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>  ssh一般用于远程控制，相当于建立一条ssh隧道/连接。后面的两种端口转发正是基于ssh隧道。可作为穿透内网的一种方案。</p>
-<h1 id="从透传到目标主机说起"><a href="#从透传到目标主机说起" class="headerlink" title="从透传到目标主机说起"></a>从透传到目标主机说起</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -L LocalPort:targetHost:targetPort RemoteHost -p RemoteSshPort</span><br></pre></td></tr></table></figure>
+        <h1 id="Linux常用命令"><a href="#Linux常用命令" class="headerlink" title="Linux常用命令"></a>Linux常用命令</h1><h2 id="软件安装"><a href="#软件安装" class="headerlink" title="软件安装"></a>软件安装</h2><h3 id="dpkg"><a href="#dpkg" class="headerlink" title="dpkg"></a>dpkg</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dpkg --configure -a</span><br></pre></td></tr></table></figure>
 
-<p>上面命令建立一条【从本地(??)到远程主机(RemoteHost:RemotePort)】的ssh隧道，<strong>用于将本地端口流量【借助远程主机】【透明地】转发到目标主机</strong>。</p>
-<p>设想场景：目标主机（web服务/ssh/…）处于内网，我们无法直接访问。但是可以通过跳板机来访问之（跳板机可以直接方便访问目标主机，二者一般处于局域网）。此跳板机即我们需要建立隧道的一端。而本地端口自然是你所方便访问到的。</p>
-<p>简单示意：(somebody)–Local===ssh===&gt;{Remote–Target}</p>
-<p>可要是找不到这样的跳板机呢，譬如“跳板机”不能直接访问目标主机（如内网NAT虚拟机）？ssh本地端口转发恐怕就无能为力了，因为本地无法建立与远程的ssh隧道。但是反过来呢，如果目标主机（又或可直接访问目标主机的局域网机）可以建立与本地的ssh隧道，那也是OK的咯。这就涉及到ssh远程端口转发了，不过和本地端口转发不同，ssh发起端为远程主机，命令如下：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -R RemotePort:targetLocalHost:targetLocalPort RemoteHost -p RemoteSshPort</span><br></pre></td></tr></table></figure>
+<h2 id="文件操作"><a href="#文件操作" class="headerlink" title="文件操作"></a>文件操作</h2><h3 id="lsof-list-open-files"><a href="#lsof-list-open-files" class="headerlink" title="lsof: list open files"></a>lsof: list open files</h3><p>一般以root权限运行</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 基本的</span></span><br><span class="line">lsof -h <span class="comment"># 简要帮助</span></span><br><span class="line">lsof -a <span class="comment"># 结果进程“与”运算（而不是“或”）</span></span><br><span class="line">lsof -F <span class="comment"># 格式化输出结果，如 lsof -F pcfn（进程id,命令名，fd，文件名）</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取网络信息</span></span><br><span class="line">lsof -i  <span class="comment"># all connections, or `lsof -i 6` for ipv6 </span></span><br><span class="line">lsof -iTCP</span><br><span class="line">lsof -i :&lt;port&gt;</span><br><span class="line">lsof -i @&lt;host&gt;</span><br><span class="line">lsof -i -s[TCP]:&#123;LISTEN,ESTABLISHED,...&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 用户信息</span></span><br><span class="line">lsof -u &lt;user&gt;</span><br><span class="line">lsof -u ^&lt;user&gt; <span class="comment"># 指定用户以外的用户</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 命令和进程</span></span><br><span class="line">lsof -p &lt;pid&gt; <span class="comment"># 指定进程已打开的内容</span></span><br><span class="line">lsof -c &lt;proc&gt; <span class="comment"># 指定命令正在使用的文件,网络连接等</span></span><br><span class="line">lsof -t <span class="comment"># 仅返回pid，如kill -HUP `lsof -t -c &lt;proc&gt;`</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 文件和目录</span></span><br><span class="line">lsof &lt;file&gt;</span><br><span class="line">lsof &lt;dir&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 其他</span></span><br><span class="line">lsof +L1 <span class="comment"># 显示所有打开链接数小于1的文件(deleted)</span></span><br><span class="line">lsof -i @fw.google.com:2150=2180 <span class="comment"># 某个端口范围...</span></span><br></pre></td></tr></table></figure>
 
-<p>简单示意：   (somebody)–Remote&lt;===ssh==={Local–Target} <br>或者这样看： {Target–Local}===ssh===&gt;Remote–(somebody)</p>
-<p>总结下，两种方式联系与区别：</p>
-<ol>
-<li>联系：两者都可使用相同的手段（ssh隧道）达成相同的目的（透明转发流量）</li>
-<li>区别：跳板机的选取/位置，ssh隧道发起端位置（前者L==&gt;R,后者L&lt;==R）</li>
-</ol>
-<p>对于本地/远程·端口转发：</p>
-<ol>
-<li>本地端口转发（到远程）：访问本地端口即访问（远程）目标主机服务（透传），本地会建立监听端口（本地端口）</li>
-<li>远程端口转发（到本地）：访问远程端口即访问（本地）目标主机服务（透传），远程会建立监听端口（远程端口）</li>
-</ol>
-<h1 id="本地端口转发"><a href="#本地端口转发" class="headerlink" title="本地端口转发"></a>本地端口转发</h1><h1 id="远程端口转发"><a href="#远程端口转发" class="headerlink" title="远程端口转发"></a>远程端口转发</h1><p>和本地端口转发相对。</p>
-<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p><a href="http://www.ruanyifeng.com/blog/2011/12/ssh_port_forwarding.html" target="_blank" rel="noopener">SSH原理与运用（二）：远程操作与端口转发</a></p>
-<p><a href="https://zhuanlan.zhihu.com/p/57630633" target="_blank" rel="noopener">SSH 命令的三种代理功能</a></p>
-
+<h3 id="文本处理三剑客：grep、sed、awk"><a href="#文本处理三剑客：grep、sed、awk" class="headerlink" title="文本处理三剑客：grep、sed、awk"></a>文本处理三剑客：grep、sed、awk</h3>
     </div>
 
     
@@ -300,7 +287,9 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/tools/" rel="tag"># tools</a>
+              <a href="/tags/linux/" rel="tag"># linux</a>
+              <a href="/tags/command/" rel="tag"># command</a>
+              <a href="/tags/shell/" rel="tag"># shell</a>
           </div>
 
         
@@ -309,12 +298,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2019/10/18/iptables/" rel="prev" title="iptables">
-      <i class="fa fa-chevron-left"></i> iptables
+    <a href="/2020/03/26/ssh-forward/" rel="prev" title="ssh端口转发">
+      <i class="fa fa-chevron-left"></i> ssh端口转发
     </a></div>
       <div class="post-nav-item">
-    <a href="/2020/04/18/linux-command/" rel="next" title="linux-command">
-      linux-command <i class="fa fa-chevron-right"></i>
+    <a href="/2020/08/22/cmake-note/" rel="next" title="cmake-note">
+      cmake-note <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -353,7 +342,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#概述"><span class="nav-number">1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#从透传到目标主机说起"><span class="nav-number">2.</span> <span class="nav-text">从透传到目标主机说起</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#本地端口转发"><span class="nav-number">3.</span> <span class="nav-text">本地端口转发</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#远程端口转发"><span class="nav-number">4.</span> <span class="nav-text">远程端口转发</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考资料"><span class="nav-number">5.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Linux常用命令"><span class="nav-number">1.</span> <span class="nav-text">Linux常用命令</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#软件安装"><span class="nav-number">1.1.</span> <span class="nav-text">软件安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#dpkg"><span class="nav-number">1.1.1.</span> <span class="nav-text">dpkg</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文件操作"><span class="nav-number">1.2.</span> <span class="nav-text">文件操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#lsof-list-open-files"><span class="nav-number">1.2.1.</span> <span class="nav-text">lsof: list open files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文本处理三剑客：grep、sed、awk"><span class="nav-number">1.2.2.</span> <span class="nav-text">文本处理三剑客：grep、sed、awk</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 

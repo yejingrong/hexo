@@ -4,6 +4,66 @@
   
     
     <entry>
+      <title>cmake-note</title>
+      <link href="/2020/08/22/cmake-note/"/>
+      <url>/2020/08/22/cmake-note/</url>
+      
+        <content type="html"><![CDATA[<h1 id="cmake笔记"><a href="#cmake笔记" class="headerlink" title="cmake笔记"></a>cmake笔记</h1><h2 id="入门教程"><a href="#入门教程" class="headerlink" title="入门教程"></a>入门教程</h2><h3 id><a href="#" class="headerlink" title></a></h3><h2 id="FAQ"><a href="#FAQ" class="headerlink" title="FAQ"></a>FAQ</h2><h3 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h3><ul><li>What’s the CMake syntax to set and use variables?<ul><li><a href="https://stackoverflow.com/questions/31037882/whats-the-cmake-syntax-to-set-and-use-variables" target="_blank" rel="noopener">参考</a></li></ul></li></ul><h3 id="指令相关"><a href="#指令相关" class="headerlink" title="指令相关"></a>指令相关</h3><ul><li>include_directories/target_include_directories的区别  <ul><li>简言之，include_xx针对所有的targets，target_xx仅针对指定的target，且可以设置PUBLIC等属性</li><li>参考<a href="https://stackoverflow.com/questions/31969547/what-is-the-difference-between-include-directories-and-target-include-directorie" target="_blank" rel="noopener">include_directories &amp; target_include_directories</a></li></ul></li><li>CMakeCache.txt相关含义  <ul><li>每次cmake不一定会更新Cache里面的变量(等？)，变量区分是否non-cache：如<code>set(var ... CACHE)</code> # TODO</li><li>参考<a href="https://stackoverflow.com/questions/42160117/what-is-cmakecache-txt-and-why-it-overrides-my-variables" target="_blank" rel="noopener">what-is-cmakecache-txt-and-why-it-overrides-my-variables</a></li></ul></li></ul><h3 id="简单总结"><a href="#简单总结" class="headerlink" title="简单总结"></a>简单总结</h3><ul><li>cmake主要用来进行编译。支持各makefile的跨平台，比makefile高级、易用。</li><li>从linux的cpp编译角度讲，主要分预处理（如条件编译）、编译、（汇编）、链接的流程。<ul><li>预处理：进行宏定义、条件编译、包含（查找头文件）..</li><li>编译：编译单文件，指定编译选项（调试信息、优化、语言标准等）</li><li>链接：指定各.o、.a、.so等二进制文件，链接生成可执行文件、动态库、（打包为）静态库等</li></ul></li><li>cmake主要有以下工作或功能：<ul><li>CMake本身的语法/语言，如支持条件，变量等。</li><li>默认变量（build_type, c_standard等）。</li><li>指定编译的源文件和库、查找头文件、库的目录，指定编译选项，指定目标及生成；</li><li>软件测试（略）</li><li>软件和文件的安装（Install）</li></ul></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> build </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> cmake </tag>
+            
+            <tag> makefile </tag>
+            
+            <tag> build </tag>
+            
+            <tag> note </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>linux-command</title>
+      <link href="/2020/04/18/linux-command/"/>
+      <url>/2020/04/18/linux-command/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Linux常用命令"><a href="#Linux常用命令" class="headerlink" title="Linux常用命令"></a>Linux常用命令</h1><h2 id="软件安装"><a href="#软件安装" class="headerlink" title="软件安装"></a>软件安装</h2><h3 id="dpkg"><a href="#dpkg" class="headerlink" title="dpkg"></a>dpkg</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dpkg --configure -a</span><br></pre></td></tr></table></figure><h2 id="文件操作"><a href="#文件操作" class="headerlink" title="文件操作"></a>文件操作</h2><h3 id="lsof-list-open-files"><a href="#lsof-list-open-files" class="headerlink" title="lsof: list open files"></a>lsof: list open files</h3><p>一般以root权限运行</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 基本的</span></span><br><span class="line">lsof -h <span class="comment"># 简要帮助</span></span><br><span class="line">lsof -a <span class="comment"># 结果进程“与”运算（而不是“或”）</span></span><br><span class="line">lsof -F <span class="comment"># 格式化输出结果，如 lsof -F pcfn（进程id,命令名，fd，文件名）</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取网络信息</span></span><br><span class="line">lsof -i  <span class="comment"># all connections, or `lsof -i 6` for ipv6 </span></span><br><span class="line">lsof -iTCP</span><br><span class="line">lsof -i :&lt;port&gt;</span><br><span class="line">lsof -i @&lt;host&gt;</span><br><span class="line">lsof -i -s[TCP]:&#123;LISTEN,ESTABLISHED,...&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 用户信息</span></span><br><span class="line">lsof -u &lt;user&gt;</span><br><span class="line">lsof -u ^&lt;user&gt; <span class="comment"># 指定用户以外的用户</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 命令和进程</span></span><br><span class="line">lsof -p &lt;pid&gt; <span class="comment"># 指定进程已打开的内容</span></span><br><span class="line">lsof -c &lt;proc&gt; <span class="comment"># 指定命令正在使用的文件,网络连接等</span></span><br><span class="line">lsof -t <span class="comment"># 仅返回pid，如kill -HUP `lsof -t -c &lt;proc&gt;`</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 文件和目录</span></span><br><span class="line">lsof &lt;file&gt;</span><br><span class="line">lsof &lt;dir&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 其他</span></span><br><span class="line">lsof +L1 <span class="comment"># 显示所有打开链接数小于1的文件(deleted)</span></span><br><span class="line">lsof -i @fw.google.com:2150=2180 <span class="comment"># 某个端口范围...</span></span><br></pre></td></tr></table></figure><h3 id="文本处理三剑客：grep、sed、awk"><a href="#文本处理三剑客：grep、sed、awk" class="headerlink" title="文本处理三剑客：grep、sed、awk"></a>文本处理三剑客：grep、sed、awk</h3>]]></content>
+      
+      
+      <categories>
+          
+          <category> linux </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> linux </tag>
+            
+            <tag> command </tag>
+            
+            <tag> shell </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>ssh端口转发</title>
       <link href="/2020/03/26/ssh-forward/"/>
       <url>/2020/03/26/ssh-forward/</url>
